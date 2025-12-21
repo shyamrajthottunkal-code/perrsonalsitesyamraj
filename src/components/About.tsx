@@ -1,34 +1,39 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Brain, Zap, Palette } from "lucide-react";
+import { Bot, Code2, Braces, MessageSquare, Sparkles } from "lucide-react";
 
 const skills = [
   {
+    icon: Bot,
+    title: "AI Developer",
+    description: "Building intelligent applications with modern LLM APIs and AI-powered solutions.",
+  },
+  {
     icon: Code2,
-    title: "Frontend Engineering",
-    description: "React, TypeScript, Next.js, and modern CSS with a focus on performance and accessibility.",
+    title: "Frontend Developer",
+    description: "Crafting responsive, performant web interfaces with React, TypeScript, and modern CSS.",
   },
   {
-    icon: Brain,
-    title: "AI Integration",
-    description: "Building practical LLM solutions using APIs like Gemini, GPT, and Claude for real-world applications.",
+    icon: Braces,
+    title: "JavaScript Engineer",
+    description: "Deep expertise in modern JavaScript/ES6+, async patterns, and web performance.",
   },
   {
-    icon: Zap,
-    title: "Performance",
-    description: "Optimizing web vitals, lazy loading, and efficient state management for lightning-fast experiences.",
+    icon: MessageSquare,
+    title: "ChatGPT Integration",
+    description: "Integrating OpenAI's GPT models for conversational AI and intelligent automation.",
   },
   {
-    icon: Palette,
-    title: "Design Systems",
-    description: "Creating scalable, consistent UI component libraries and design tokens for teams.",
+    icon: Sparkles,
+    title: "Gemini Expert",
+    description: "Leveraging Google's Gemini API for multimodal AI applications and real-world use cases.",
   },
 ];
 
 const techStack = [
-  "React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js",
-  "Python", "PostgreSQL", "Supabase", "Gemini API", "OpenAI",
+  "React", "TypeScript", "JavaScript", "Tailwind CSS",
+  "ChatGPT API", "Gemini API", "Node.js",
 ];
 
 export const About = () => {
@@ -49,25 +54,25 @@ export const About = () => {
               About <span className="text-gradient">Me</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a frontend engineer passionate about creating seamless user experiences 
-              that leverage the power of AI. With expertise in modern JavaScript frameworks 
-              and a deep understanding of LLM capabilities, I build applications that are 
+              I'm a frontend engineer and AI developer passionate about creating seamless user experiences 
+              that leverage the power of modern AI. With expertise in JavaScript frameworks 
+              and a deep understanding of ChatGPT and Gemini capabilities, I build applications that are 
               not just functional, but intelligently intuitive.
             </p>
           </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:glow-primary"
+                className="group p-6 rounded-2xl bg-card border border-border hover:border-foreground/30 transition-all duration-300 hover:glow-primary"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <skill.icon className="h-6 w-6 text-primary-foreground" />
+                <div className="h-12 w-12 rounded-xl bg-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <skill.icon className="h-6 w-6 text-background" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold mb-2">{skill.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{skill.description}</p>
@@ -91,7 +96,7 @@ export const About = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                  className="px-4 py-2 rounded-full glass text-sm font-medium text-foreground hover:border-primary/50 transition-colors cursor-default"
+                  className="px-4 py-2 rounded-full glass text-sm font-medium text-foreground hover:border-foreground/50 transition-colors cursor-default"
                 >
                   {tech}
                 </motion.span>
