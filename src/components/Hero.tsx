@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Sparkles, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -68,6 +68,12 @@ export const Hero = () => {
             </Button>
             <Button variant="glass" size="lg" asChild>
               <a href="#contact">Let's Connect</a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="/resume.pdf" download>
+                <Download className="h-4 w-4 mr-2" />
+                Resume
+              </a>
             </Button>
           </motion.div>
         </div>
