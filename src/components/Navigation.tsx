@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -52,6 +53,9 @@ export const Navigation = () => {
             </li>
           ))}
           <li>
+            <ThemeToggle />
+          </li>
+          <li>
             <Button variant="hero" size="sm" asChild>
               <a href="#contact">Get in Touch</a>
             </Button>
@@ -59,14 +63,16 @@ export const Navigation = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}

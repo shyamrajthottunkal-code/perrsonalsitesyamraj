@@ -182,13 +182,13 @@ export const Contact = () => {
               <p className="text-muted-foreground mb-4">Or reach out directly:</p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Button variant="outline" asChild>
-                  <a href="mailto:shyam@example.com">
+                  <a href="mailto:shyamrajthottunkal@gmail.com">
                     <Send className="h-4 w-4 mr-2" />
                     Email Me
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/shyam-raj-thottunkal" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                   </a>
                 </Button>
