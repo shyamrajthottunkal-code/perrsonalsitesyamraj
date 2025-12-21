@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/shyam-raj-thottunkal";
 
 const projects = [
   {
@@ -10,21 +12,21 @@ const projects = [
     description: "A full-stack content generation platform powered by LLMs. Features real-time streaming, markdown editing, and smart templates for marketing copy.",
     tags: ["React", "TypeScript", "Gemini API", "Tailwind"],
     featured: true,
-    gradient: "from-primary/20 to-glow-secondary/20",
+    gradient: "from-primary/10 to-muted/20",
   },
   {
     title: "Smart Dashboard",
     description: "An analytics dashboard with AI-powered insights. Natural language queries transform into interactive data visualizations.",
-    tags: ["Next.js", "PostgreSQL", "OpenAI", "Recharts"],
+    tags: ["Next.js", "PostgreSQL", "ChatGPT", "Recharts"],
     featured: false,
-    gradient: "from-glow-secondary/20 to-primary/20",
+    gradient: "from-muted/20 to-primary/10",
   },
   {
     title: "Code Review Assistant",
     description: "Browser extension that provides AI-powered code suggestions and reviews directly in GitHub PRs.",
-    tags: ["TypeScript", "Chrome API", "Claude", "Webpack"],
+    tags: ["TypeScript", "Chrome API", "Gemini", "Webpack"],
     featured: false,
-    gradient: "from-primary/20 to-glow-secondary/10",
+    gradient: "from-primary/10 to-muted/10",
   },
 ];
 
@@ -56,12 +58,15 @@ export const Projects = () => {
 
           <div className="grid gap-8">
             {projects.map((project, index) => (
-              <motion.article
+              <motion.a
                 key={project.title}
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className={`group relative rounded-3xl overflow-hidden border border-border bg-card hover:border-primary/30 transition-all duration-500 ${
+                className={`group relative rounded-3xl overflow-hidden border border-border bg-card hover:border-foreground/30 transition-all duration-500 cursor-pointer ${
                   project.featured ? "md:col-span-2" : ""
                 }`}
               >
@@ -78,14 +83,9 @@ export const Projects = () => {
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Button variant="ghost" size="icon" className="h-9 w-9">
-                        <Github className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-9 w-9">
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    <Button variant="ghost" size="icon" className="h-9 w-9">
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
                   </div>
 
                   <h3 className="font-heading text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors">
@@ -106,7 +106,7 @@ export const Projects = () => {
                     ))}
                   </div>
                 </div>
-              </motion.article>
+              </motion.a>
             ))}
           </div>
         </div>
