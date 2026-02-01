@@ -188,7 +188,7 @@ export const Contact = () => {
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://www.linkedin.com/in/shyam-raj-thottunkal" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/shyam-raj-1997sep/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                   </a>
                 </Button>

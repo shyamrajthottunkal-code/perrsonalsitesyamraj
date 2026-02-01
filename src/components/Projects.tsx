@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/shyam-raj-thottunkal";
+const LINKEDIN_URL = "https://www.linkedin.com/in/shyam-raj-1997sep/";
 
 const projects = [
   {

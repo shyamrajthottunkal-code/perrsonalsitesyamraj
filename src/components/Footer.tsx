@@ -18,7 +18,7 @@ export const Footer = () => {
               <Mail className="h-5 w-5" />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/shyam-raj-thottunkal"
+              href="https://www.linkedin.com/in/shyam-raj-1997sep/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
